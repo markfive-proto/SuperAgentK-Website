@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary: #4f378a;
+  --color-surface: #fdf7ff;
+  --color-surface-dim: #ded8e0;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f8f2fa;
+  --color-surface-container: #f2ecf4;
+  --color-surface-container-high: #ece6ee;
+  --color-surface-container-highest: #e6e0e9;
+  --color-on-surface: #1d1b20;
+  --color-on-surface-variant: #494551;
+  --color-outline: #7a7582;
+  --color-outline-variant: #cbc4d2;
+  --color-secondary: #63597c;
+  --color-secondary-container: #e1d4fd;
+  --color-on-secondary-container: #645a7d;
+  --color-tertiary: #765b00;
+  --color-tertiary-fixed: #ffdf93;
+  --color-on-tertiary-fixed-variant: #594400;
+  --color-error: #ba1a1a;
+
+  --spacing-gutter: 24px;
+  --spacing-container: 32px;
+  --spacing-section: 80px;
+}
+
+@utility glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+@utility paper-card {
+  background-color: #FCFCFA;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-blend-mode: overlay;
+  opacity: 0.98;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+@utility gradient-text {
+  background: linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #F97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility gradient-btn {
+  background: linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #F97316 100%);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), 0 4px 15px rgba(236, 72, 153, 0.3);
+}
+
+@utility nature-bg {
+  background: radial-gradient(circle at top right, rgba(233, 221, 255, 0.4) 0%, transparent 50%),
+              radial-gradient(circle at bottom left, rgba(255, 223, 147, 0.2) 0%, transparent 40%);
+  background-color: var(--color-surface);
+}
