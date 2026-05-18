@@ -345,6 +345,85 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Platform Logos */}
+      <section className="py-[80px] px-[32px]">
+        <div className="max-w-7xl mx-auto">
+
+          {/* Government Submission Portals */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <p className="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-3">Trained for</p>
+            <h2 className="font-display text-[28px] font-bold mb-10 leading-tight">
+              Government submission <span className="gradient-text">portals.</span>
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+              {[
+                { name: 'SST Submission', src: '/mysst.jpg' },
+                { name: 'EPF Submission', src: '/kwsp.png' },
+                { name: 'SOCSO EIS', src: '/perkeso.png' },
+                { name: 'Withholding Tax', src: '/mytax.png' },
+                { name: 'HRDC', src: '/hrdc.svg' },
+              ].map(({ name, src }, i) => (
+                <motion.div
+                  key={name}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="paper-card rounded-2xl p-5 flex flex-col items-center gap-3 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+                >
+                  <div className="h-14 flex items-center justify-center w-full">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={src} alt={name} className="max-h-14 max-w-full object-contain" />
+                  </div>
+                  <span className="text-[11px] font-semibold text-on-surface-variant text-center leading-tight">{name}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Accounting Software Integrations */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-3">Integrated with</p>
+            <h2 className="font-display text-[28px] font-bold mb-10 leading-tight">
+              Your existing <span className="gradient-text">accounting stack.</span>
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl">
+              {[
+                { name: 'AutoCount Cloud', src: 'https://th.autocountcloud.com/images/cloud-acc-logo2.png', dark: false },
+                { name: 'AutoCount On-Premise', src: '/autocount-onprem.jpg', dark: false },
+                { name: 'SQL Accounting Cloud', src: 'https://cdn.sql.com.my/wp-content/uploads/2019/03/cropped-5b4bbf0471d0991c9a36f576_sql-logo-white-less-1-300x89.png', dark: true },
+                { name: 'Bukku', src: 'https://aitraining2u.bukku.my/assets/img/logo/logo-landscape-light.png', dark: false },
+              ].map(({ name, src, dark }, i) => (
+                <motion.div
+                  key={name}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`rounded-2xl p-6 flex flex-col items-center gap-3 hover:-translate-y-1 hover:shadow-md transition-all duration-300 ${dark ? 'bg-gray-800' : 'paper-card'}`}
+                >
+                  <div className="h-12 flex items-center justify-center w-full">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={src} alt={name} className="max-h-12 max-w-full object-contain" />
+                  </div>
+                  <span className={`text-[11px] font-semibold text-center leading-tight ${dark ? 'text-gray-300' : 'text-on-surface-variant'}`}>{name}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-[80px] px-[32px] text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 -z-10"></div>
