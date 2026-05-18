@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import { Bot, BarChart3, Search, MessageSquare, CheckSquare, Network, TrendingUp, Check, Shield, Zap, CircleCheck } from 'lucide-react'
+import { Check } from 'lucide-react'
 import Image from 'next/image'
 import DemoModal from './components/DemoModal'
 
@@ -18,14 +18,15 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-[32px] py-4 max-w-full bg-surface/70 backdrop-blur-2xl border-b border-white/10 shadow-sm">
         <div className="flex items-center gap-2">
           <Image alt="K" src="/logo-icon.png" width={40} height={40} className="h-10 w-auto object-contain" />
-          <span className="font-display text-[26px] font-extrabold tracking-tight">
+          <span className="font-display text-[20px] sm:text-[26px] font-extrabold tracking-tight whitespace-nowrap">
             <span className="text-on-surface">SuperAgent</span><span className="gradient-text">K</span>
           </span>
         </div>
 
-        <div className="flex items-center gap-[24px]">
-          <button onClick={() => setDemoOpen(true)} className="gradient-btn px-6 py-2.5 rounded-full text-white font-bold hover:scale-95 transition-transform duration-200">
-            Request a Demo
+        <div className="flex items-center gap-[24px] flex-shrink-0">
+          <button onClick={() => setDemoOpen(true)} className="gradient-btn px-3 sm:px-6 py-2.5 rounded-full text-white font-bold text-sm sm:text-base hover:scale-95 transition-transform duration-200 whitespace-nowrap">
+            <span className="sm:hidden">Demo</span>
+            <span className="hidden sm:inline">Request a Demo</span>
           </button>
         </div>
       </nav>
@@ -39,7 +40,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="font-display text-[48px] md:text-[64px] font-extrabold leading-[1.1] tracking-[-0.02em] mb-6"
           >
-            AI Employees. <span className="gradient-text">Infinite Impact.</span>
+            Cultivate AI Literacy, One Hire at a Time.<br />Start with your first <span className="gradient-text">AI teammate.</span>
           </motion.h1>
 
           <motion.p
@@ -48,7 +49,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-body text-xl text-on-surface-variant max-w-2xl mx-auto mb-6 leading-relaxed"
           >
-            Your AI teammate that thinks ahead, takes action, and delivers results across every financial workflow.
+            Train your AI employee to take over tasks, while your human workforce masters prompt engineering and unlocks new ways to innovate.
           </motion.p>
 
           {/* Feature pills */}
@@ -86,112 +87,6 @@ export default function Home() {
       </section>
 
 
-      {/* AI Roles — Horizontal Card Row */}
-      <section className="py-[80px] px-[32px]">
-        <div className="max-w-7xl mx-auto">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-on-surface-variant text-base mb-5"
-          >
-            AI employees that understand your role and amplify your impact.
-          </motion.p>
-
-          {/* Statutory workflow pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="flex flex-wrap gap-2 mb-3"
-          >
-            {['EPF', 'SOCSO', 'SST Submission', 'Payroll', 'Statutory'].map((tag) => (
-              <span key={tag} className="px-3 py-1 rounded-full bg-primary/8 border border-primary/15 text-primary text-xs font-semibold">
-                {tag}
-              </span>
-            ))}
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-            className="text-sm font-semibold text-on-surface-variant mb-8 flex items-center gap-2"
-          >
-            <span className="text-primary">→</span>
-            Let your digital Employee handle all the manual work for you.
-          </motion.p>
-
-          {/* Scrollable card row */}
-          <div className="flex gap-4 overflow-x-auto pb-4 -mx-[32px] px-[32px] snap-x snap-mandatory scrollbar-hide">
-            {[
-              {
-                title: 'Data Analyst',
-                desc: 'Turn data into insights and drive clarity.',
-                icon: <BarChart3 className="w-8 h-8" />,
-                color: 'bg-blue-50 text-blue-600',
-              },
-              {
-                title: 'Researcher',
-                desc: 'Find information, validate, and stay ahead.',
-                icon: <Search className="w-8 h-8" />,
-                color: 'bg-violet-50 text-violet-600',
-              },
-              {
-                title: 'Communicator',
-                desc: 'Draft reports, emails, and summaries instantly.',
-                icon: <MessageSquare className="w-8 h-8" />,
-                color: 'bg-pink-50 text-pink-600',
-              },
-              {
-                title: 'Task Manager',
-                desc: 'Organise work, track progress, and never miss a deadline.',
-                icon: <CheckSquare className="w-8 h-8" />,
-                color: 'bg-green-50 text-green-600',
-              },
-              {
-                title: 'Integrator',
-                desc: 'Connect systems and sync data seamlessly.',
-                icon: <Network className="w-8 h-8" />,
-                color: 'bg-orange-50 text-orange-600',
-              },
-              {
-                title: 'Strategist',
-                desc: 'Model scenarios and support smarter decisions.',
-                icon: <TrendingUp className="w-8 h-8" />,
-                color: 'bg-primary/5 text-primary',
-              },
-            ].map(({ title, desc, icon, color }, i) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07 }}
-                className="snap-start flex-shrink-0 w-[210px] bg-[#f7f6fb] border border-outline-variant/30 rounded-2xl p-5 flex flex-col justify-between gap-4 group hover:-translate-y-1 hover:shadow-md transition-all duration-300 cursor-pointer"
-              >
-                <div>
-                  <h3 className="font-display text-[17px] font-bold text-on-surface mb-2">{title}</h3>
-                  <p className="text-on-surface-variant text-[13px] leading-snug">{desc}</p>
-                </div>
-
-                {/* Illustration placeholder — styled icon */}
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center self-end ${color} group-hover:scale-110 transition-transform duration-300`}>
-                  {icon}
-                </div>
-
-                {/* Arrow */}
-                <button className="w-8 h-8 rounded-full bg-white border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-colors text-sm">
-                  ↗
-                </button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Dashboard Preview */}
       <section className="py-[80px] px-[32px] bg-surface-container-low overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -209,7 +104,7 @@ export default function Home() {
                 Say goodbye to fragmented tools. Our unified canvas brings your AI workforce and financial data into a single, beautiful workspace designed for calm capability.
               </p>
               <ul className="space-y-6">
-                {['Universal Workflow Designer', 'Multi-Agent Orchestration', 'Secure Audit Trail Logging'].map((item) => (
+                {['Build Mini-Apps & Skills', 'Scheduled Task Automation', 'Built-in Hosted Databases'].map((item) => (
                   <li key={item} className="flex items-center gap-4">
                     <span className="text-primary bg-primary/10 p-2 rounded-full">
                       <Check className="w-5 h-5" />
@@ -287,11 +182,11 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
               {[
-                { name: 'SST Submission', src: 'https://mysst.customs.gov.my/assets/images/mysstfinalFix.jpg' },
-                { name: 'EPF Submission', src: 'https://www.kwsp.gov.my/o/kwsp-theme/images/main_logo.png' },
-                { name: 'SOCSO EIS', src: 'https://assist.perkeso.gov.my/pks-login-theme/images/perkeso/perkeso_logo.png' },
-                { name: 'Withholding Tax', src: 'https://mytax.hasil.gov.my/assets/images/myTax_logo.png' },
-                { name: 'HRDC', src: 'https://hrdcorp.gov.my/wp-content/uploads/2021/02/KESUMA_HRDCorp_web.svg' },
+                { name: 'SST Submission', src: '/mysst.jpg' },
+                { name: 'EPF Submission', src: '/kwsp.svg' },
+                { name: 'SOCSO EIS', src: '/perkeso.png' },
+                { name: 'Withholding Tax', src: '/mytax.png' },
+                { name: 'HRDC', src: '/hrdc.svg' },
               ].map(({ name, src }, i) => (
                 <motion.div
                   key={name}
@@ -321,9 +216,10 @@ export default function Home() {
             <h2 className="font-display text-[28px] font-bold mb-10 leading-tight">
               Your existing <span className="gradient-text">accounting stack.</span>
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl">
               {[
                 { name: 'AutoCount Cloud', src: 'https://th.autocountcloud.com/images/cloud-acc-logo2.png', dark: false },
+                { name: 'AutoCount On-Premise', src: '/autocount-onprem.jpg', dark: false },
                 { name: 'SQL Accounting Cloud', src: 'https://cdn.sql.com.my/wp-content/uploads/2019/03/cropped-5b4bbf0471d0991c9a36f576_sql-logo-white-less-1-300x89.png', dark: true },
                 { name: 'Bukku', src: 'https://aitraining2u.bukku.my/assets/img/logo/logo-landscape-light.png', dark: true },
               ].map(({ name, src, dark }, i) => (
