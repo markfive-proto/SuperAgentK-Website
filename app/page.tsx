@@ -32,13 +32,13 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-[80px] px-[32px] flex flex-col items-center text-center">
+      <section className="relative pt-32 pb-[80px] px-[32px] flex flex-col items-center text-center">
         <div className="max-w-4xl mx-auto z-10">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-display text-[28px] sm:text-[44px] md:text-[64px] font-extrabold leading-[1.15] tracking-[-0.02em] mb-6"
+            className="font-display text-[28px] sm:text-[44px] md:text-[64px] font-extrabold leading-[1.15] tracking-[-0.02em] mb-4"
           >
             Start with your first <span className="gradient-text">AI teammate.</span>
           </motion.h1>
@@ -47,7 +47,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-body text-xl text-on-surface-variant max-w-2xl mx-auto mb-6 leading-relaxed"
+            className="font-body text-xl text-on-surface-variant max-w-2xl mx-auto mb-4 leading-relaxed"
           >
             Cultivate AI Literacy, One Hire at a Time.
           </motion.p>
@@ -70,7 +70,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-16 w-full max-w-6xl mx-auto relative group"
+          className="mt-10 w-full max-w-6xl mx-auto relative group"
         >
           <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-secondary/10 to-tertiary/10 rounded-[48px] blur-3xl opacity-50 group-hover:opacity-75 transition duration-1000" />
           <div className="relative glass-panel rounded-[40px] overflow-hidden p-4">
@@ -183,7 +183,7 @@ export default function Home() {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
               {[
                 { name: 'SST Submission', src: '/mysst.jpg' },
-                { name: 'EPF Submission', src: '/kwsp.svg' },
+                { name: 'EPF Submission', src: '/kwsp.png' },
                 { name: 'SOCSO EIS', src: '/perkeso.png' },
                 { name: 'Withholding Tax', src: '/mytax.png' },
                 { name: 'HRDC', src: '/hrdc.svg' },
