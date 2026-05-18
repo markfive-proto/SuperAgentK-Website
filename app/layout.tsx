@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'SuperAgentK | AI Employees for Financial Teams',
   description:
-    'Train your AI employee to take over tasks, while your human workforce masters prompt engineering and unlocks new ways to innovate.',
+    'Cultivate AI Literacy, One Hire at a Time. Start with your first AI teammate.',
 }
 
 export default function RootLayout({

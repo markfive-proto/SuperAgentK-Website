@@ -40,7 +40,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="font-display text-[28px] sm:text-[44px] md:text-[64px] font-extrabold leading-[1.15] tracking-[-0.02em] mb-6"
           >
-            Cultivate AI Literacy, One Hire at a Time.<br className="hidden sm:block" />Start with your first <span className="gradient-text">AI teammate.</span>
+            Start with your first <span className="gradient-text">AI teammate.</span>
           </motion.h1>
 
           <motion.p
@@ -49,7 +49,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-body text-xl text-on-surface-variant max-w-2xl mx-auto mb-6 leading-relaxed"
           >
-            Train your AI employee to take over tasks, while your human workforce masters prompt engineering and unlocks new ways to innovate.
+            Cultivate AI Literacy, One Hire at a Time.
           </motion.p>
 
           {/* Feature pills */}
