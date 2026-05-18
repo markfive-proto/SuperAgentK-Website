@@ -38,9 +38,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-display text-[48px] md:text-[64px] font-extrabold leading-[1.1] tracking-[-0.02em] mb-6"
+            className="font-display text-[28px] sm:text-[44px] md:text-[64px] font-extrabold leading-[1.15] tracking-[-0.02em] mb-6"
           >
-            Cultivate AI Literacy, One Hire at a Time.<br />Start with your first <span className="gradient-text">AI teammate.</span>
+            Cultivate AI Literacy, One Hire at a Time.<br className="hidden sm:block" />Start with your first <span className="gradient-text">AI teammate.</span>
           </motion.h1>
 
           <motion.p
@@ -221,7 +221,7 @@ export default function Home() {
                 { name: 'AutoCount Cloud', src: 'https://th.autocountcloud.com/images/cloud-acc-logo2.png', dark: false },
                 { name: 'AutoCount On-Premise', src: '/autocount-onprem.jpg', dark: false },
                 { name: 'SQL Accounting Cloud', src: 'https://cdn.sql.com.my/wp-content/uploads/2019/03/cropped-5b4bbf0471d0991c9a36f576_sql-logo-white-less-1-300x89.png', dark: true },
-                { name: 'Bukku', src: 'https://aitraining2u.bukku.my/assets/img/logo/logo-landscape-light.png', dark: true },
+                { name: 'Bukku', src: 'https://aitraining2u.bukku.my/assets/img/logo/logo-landscape-light.png', dark: false },
               ].map(({ name, src, dark }, i) => (
                 <motion.div
                   key={name}
