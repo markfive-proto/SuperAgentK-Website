@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Hanken_Grotesk, Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
+
+const GA_ID = 'G-41KVWTVFHW'
 
 const hanken = Hanken_Grotesk({
   subsets: ['latin'],
@@ -15,9 +18,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'SuperAgentK | AI Employees for Financial Teams',
+  title: {
+    default: 'SuperAgentK — AI Employees for Every Business',
+    template: '%s | SuperAgentK',
+  },
   description:
-    'Cultivate AI Literacy, One Hire at a Time. Start with your first AI teammate.',
+    'SuperAgentK deploys intelligent AI employees that handle admin, payroll, EPF, SOCSO, SST submissions, compliance, sales and more.',
+  themeColor: '#4f378a',
 }
 
 export default function RootLayout({
@@ -34,6 +41,13 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-surface text-on-surface font-body antialiased selection:bg-primary/20 selection:text-primary">
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');
+        `}</Script>
         {children}
       </body>
     </html>
